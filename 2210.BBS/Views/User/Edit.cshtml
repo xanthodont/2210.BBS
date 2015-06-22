@@ -1,0 +1,135 @@
+﻿@model Model.User
+
+@{
+    ViewBag.Title = "会员注册";
+}
+
+@section header {
+<link rel="stylesheet" href="@Url.Content("~/Assets/jquery-ui/jquery-ui.min.css")">
+}
+
+<form id="js-register-form" action="#" class="form-horizontal">
+    <fieldset>
+        <legend>用户注册</legend>
+    </fieldset>
+    <div class="alert alert-error hide">
+			<button class="close" data-dismiss="alert"></button>
+			<span>验证不通过</span>
+		</div>
+    <div class="alert alert-success hide">
+        <button class="close" data-dismiss="alert"></button>
+        验证不通过
+    </div>
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.UserName)<span class="required">*</span></label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="username" />
+            
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.NickName)<span class="required">*</span></label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="nickname" />
+
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.RealName)<span class="required">*</span></label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="realname" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.RealName)</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.Password)<span class="required">*</span></label>
+        <div class="controls">
+            <input type="password" class="m-wrap" name="password" id="password" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Password)</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">确认密码<span class="required">*</span></label>
+        <div class="controls">
+            <input type="password" class="m-wrap" name="eqpassword" />
+            <span class="help-inline"></span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.PsdQ)</label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="padq" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.PsdQ)</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.PsdA)</label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="pada" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.PsdA)</span>
+        </div>
+    </div>
+
+    
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.Brithday)</label>
+        <div class="controls">
+            <input name="birthday" class="m-wrap m-ctrl-medium date-picker" readonly="" size="16" type="text" value="">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.Phone)</label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="phone" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Phone)</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.Address)</label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="address" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Address)</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.Email)</label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="email" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Email)</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label">@Html.NameFor(model => model.ZipCode)</label>
+        <div class="controls">
+            <input type="text" class="m-wrap" name="zipcode" />
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.ZipCode)</span>
+        </div>
+    </div>
+
+
+    <div class="form-actions clearfix">
+        <button type="submit" class="btn">注册</button>
+    </div>
+
+</form>
+
+
+@section footer{
+<script src="@Url.Content("~/Assets/js/jquery.validate.min.js")" ></script>  
+<script src="@Url.Content("~/Assets/jquery-ui/jquery-ui.min.js")"></script> 
+<script src="@Url.Content("~/Assets/js/register.js")" ></script>  
+<script>
+    $(document).ready(function() {
+        Register.init();
+    });
+</script>
+}

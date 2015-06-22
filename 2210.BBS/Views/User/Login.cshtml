@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "政务咨询登陆";
+}
+
+@section header {
+
+}
+
+<div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <form class="form-horizontal js-login-form">
+        <div class="control-group">
+            <label class="control-label" for="username">用户名</label>
+            <div class="controls">
+                <input type="text" id="username" name="username" placeholder="用户名">
+                <span class="help-inline">请输入用户名</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    Remember me
+                </label>
+                <button type="submit" class="btn">Sign in</button>
+            </div>
+        </div>
+    </form>
+    <!-- END LOGIN FORM -->
+</div>
+
+
+@section footer{
+<script src="@Url.Content("~/Assets/js/jquery.validate.min.js")" ></script>  
+<script src="@Url.Content("~/Assets/js/login.js")" ></script>  
+<script>
+    jQuery(document).ready(function() {
+        Login.init();
+    });
+</script>
+}

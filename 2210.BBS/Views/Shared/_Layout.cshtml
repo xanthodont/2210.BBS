@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Assets/css/base.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Assets/bootstrap/css/bootstrap.min.css")" rel="stylesheet"/>
+    <!-- 
+    <link href="@Url.Content("~/Assets/bootstrap/css/bootstrap-theme.min.css")" rel="stylesheet" />
+	<link href="@Url.Content("~/Assets/bootstrap/css/bootstrap-responsive.min.css")" rel="stylesheet"/>
+    -->
+    <!--[if lte IE 6]>
+  	<link rel="stylesheet" href="@Url.Content("~/Assets/bsie/css/bootstrap-ie6.css")" >
+  	<![endif]-->
+  	<!--[if lte IE 7]>
+  	<link rel="stylesheet" href="@Url.Content("~/Assets/bsie/css/ie.css")">
+  	<![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="@Url.Content("~/Assets/bsie/js/html5shiv.min.js")"></script>
+      <script src="@Url.Content("~/Assets/media/js/respond.min.js")"></script>
+      <script src="@Url.Content("~/Assets/media/js/excanvas.min.js")"></script>
+    <![endif]-->
+
+    @RenderSection("header", false)
+</head>
+<body>
+    <div id="main" class="content">
+        @RenderBody()
+    </div>
+    
+    <script src="@Url.Content("~/Assets/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Assets/bootstrap/js/bootstrap.min.js")"></script>
+
+    
+    <!--
+    <script src="@Url.Content("~/Assets/media/js/jquery.validate.min.js")"></script> 
+        -->
+    <!--[if lte IE 6]>
+  	<script src="@Url.Content("~/Assets/bsie/js/bootstrap-ie.js")"></script>
+  	<![endif]-->
+    @RenderSection("footer", false)
+    <script src="@Url.Content("~/Assets/js/common.js")" ></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+//日期格式改变  
+$( ".datepicker" ).datepicker({dateFormat: "yy-mm-dd"});  
+//星期格式汉化  
+$( ".datepicker" ).datepicker( "option", "dayNamesMin",[ "日", "一", "二", "三", "四", "五", "六" ] );   
+//月份格式汉化  
+$( ".datepicker" ).datepicker( "option", "monthNames", [ "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" ] );  
+
+// 联系电话(手机/电话皆可)验证 
+jQuery.validator.addMethod("isPhone", function(value,element) { 
+  var length = value.length; 
+  var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/; 
+  var tel = /^\d{3,4}-?\d{7,9}$/; 
+  return this.optional(element) || (tel.test(value) || mobile.test(value)); 
+ 
+}, "请正确填写您的联系电话"); 
+  
+// 邮政编码验证 
+jQuery.validator.addMethod("isZipCode", function(value, element) { 
+  var tel = /^[0-9]{6}$/; 
+  return this.optional(element) || (tel.test(value)); 
+}, "请正确填写您的邮政编码"); 
